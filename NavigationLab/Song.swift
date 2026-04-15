@@ -7,12 +7,27 @@
 
 import SwiftUI
 
-struct Song: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+enum Song: String, CaseIterable, Identifiable {
+    case sugar, father, rain, yin, livingdeadgirl
+    
+    var id: String {
+        switch self {
+        case .sugar: return "Sugar by System of A Down"
+        case .father: return "Father by Kanye West"
+        case .rain: return "Rain by Trivium"
+        case .yin: return "Yin by NekroGoblikon"
+        case .livingdeadgirl: return "Living Dead Girl by Rob Zombie"
+        }
+        
+        
     }
-}
-
-#Preview {
-    Song()
+    var image: ImageResource {
+        switch self {
+        case .sugar: return .sugar
+            case .father: return .father
+            case .rain: return .rain
+        case .yin: return .yin
+        case .livingdeadgirl: return .livingdeadgirl
+        }
+    }
 }
