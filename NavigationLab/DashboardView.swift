@@ -13,7 +13,7 @@ struct DashboardView: View {
         TabView{
             NavigationStack {
                 VStack(spacing: 24) {
-                    Text("Today's Song")
+                    Text("THE Song")
                         .font(.title2)
                     Image(selectedSong.image)
                         .font(.system(size: 80))

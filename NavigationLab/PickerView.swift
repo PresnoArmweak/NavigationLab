@@ -18,15 +18,15 @@ struct PickerView: View {
                     dismiss()
                 } label: {
                     HStack {
-                        Image(song.image)
+                        Image(songOption.image)
                             .font(.largeTitle)
-                        Text(song.id)
+                        Text(songOption.id)
                             .font(.headline)
                             .padding(.leading)
                     }
                 }
             }
-            .navigationTitle("Pick Your Mood")
+            .navigationTitle("Pick your song, Homie")
         }
     }
 
