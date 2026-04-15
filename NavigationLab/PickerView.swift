@@ -18,9 +18,9 @@ struct PickerView: View {
                     dismiss()
                 } label: {
                     HStack {
-                        Image(systemName: songOption.symbol)
+                        Image(song.image)
                             .font(.largeTitle)
-                        Text(songOption.rawValue.capitalized)
+                        Text(song.id)
                             .font(.headline)
                             .padding(.leading)
                     }
