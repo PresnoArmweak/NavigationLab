@@ -15,9 +15,9 @@ struct DashboardView: View {
                 VStack(spacing: 24) {
                     Text("Today's Song")
                         .font(.title2)
-                    Image(systemName: selectedSong.symbol)
+                    Image(selectedSong.image)
                         .font(.system(size: 80))
-                    Text(selectedSong.message)
+                    Text(selectedSong.id)
                         .font(.headline)
                         .foregroundColor(.gray)
                     
