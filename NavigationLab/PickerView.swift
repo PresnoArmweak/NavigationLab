@@ -2,19 +2,36 @@
 //  PickerView.swift
 //  NavigationLab
 //
-//  Created by ARMSTRONG, PRESTON on 4/15/26.
+//  Created by GRAY, VIKTOR on 4/15/26.
 //
 
 import SwiftUI
 
 struct PickerView: View {
-    @Binding var selectedSong: Song
-    @Environment(\.dismiss) var dismiss
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    @Binding var song: Song
+        @Environment(\.dismiss) var dismiss
+
+        var body: some View {
+            List(Song.allCases) { songOption in
+                Button {
+                    song = songOption
+                    dismiss()
+                } label: {
+                    HStack {
+                        Image(systemName: songOption.symbol)
+                            .font(.largeTitle)
+                        Text(songOption.rawValue.capitalized)
+                            .font(.headline)
+                            .padding(.leading)
+                    }
+                }
+            }
+            .navigationTitle("Pick Your Mood")
+        }
     }
-}
 
 #Preview {
-    PickerView()
+    NavigationStack {
+        PickerView(song: .constant(.father))
+    }
 }
